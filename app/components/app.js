@@ -1,13 +1,13 @@
 import React from 'react'
-import CarrierList from './carrier-list'
-import SearchBar from './search-bar'
+import CarrierListContainer from '../containers/carrier-list-container'
+import SearchBarContainer from '../containers/search-bar-container'
 
 
 const App = () => {
   return (
     <div className="container">
-      <SearchBar />
-      <CarrierList />
+      <SearchBarContainer />
+      <CarrierListContainer />
     </div>
   )
 }

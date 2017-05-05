@@ -1,13 +1,29 @@
 import {combineReducers} from 'redux';
 
 
-const carrierReducer = (state = [], action) => { return [] }
+const carriersReducer = (state = [], action) => {
 
+  switch(action.type){
+    case 'GET_CARRIERS':
+      return action.payload.data;
+    default:
+      return state;
+  }
+}
 
+const searchTextReducer = (state = '', action) => {
+  switch(action.type){
+    case 'UPDATE_SEARCH_TEXT':
+      return action.text;
+    default:
+      return state;
+  }
+}
 
 
 const RootReducer = combineReducers({
-  carriers: carrierReducer
+  searchText: searchTextReducer,
+  carriers: carriersReducer
 });
 
 export default RootReducer
