@@ -67,10 +67,11 @@
   outline: none;
 }
 
-
-.carrier-list{
+.results-panel{
   margin-top: 65px;
+  padding-left: 0px;
 }
+
 
 .navbar-brand {
   padding-left: 0px;
