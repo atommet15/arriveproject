@@ -14,3 +14,11 @@ export const updateSearchText = (event) => {
     text: event.target.value
   }
 }
+
+export const getCarrierDetails = (id) => {
+  const request = axios.get('http://alinterviewapi.azurewebsites.net/api/carrierDetails/' + id);
+  return {
+    type: 'GET_CARRIER_DETAILS',
+    payload: request
+  }
+}

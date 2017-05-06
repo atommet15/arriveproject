@@ -1,9 +1,9 @@
 import React from 'react'
 
-const CarrierList = ({carriers}) => {
+const CarrierList = ({carriers, onCarrierClick}) => {
 
   const carrierArray = carriers.map( carrier => {
-    return <a href="#" key={carrier.Id} className="list-group-item">{carrier.Name}</a>
+    return <a href="#" key={carrier.Id} className="list-group-item" onClick={() => onCarrierClick(carrier.Id)}>{carrier.Name}</a>
   });
 
 
