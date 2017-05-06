@@ -1,22 +1,20 @@
 import React from 'react'
 
-const SearchBar = ({searchText, onTextChange, onSearch}) => {
+const SearchBar = ({searchText, onTextChange, onSearch, onClear}) => {
   return (
-
     <div className="header-bar">
       <div className="container">
-
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand" href="http://www.arrivelogistics.com/">
             <img alt="Brand" src="../../assets/logo.png" />
           </a>
-        <form >
+        <form onSubmit={(event) => { event.preventDefault(); onSearch(searchText); }}>
           <div className="input-group">
             <input type="text" value={searchText} className="form-control" placeholder="Search by city" onChange={(event) => onTextChange(event)}></input>
             <span className="input-group-btn">
-              <button className="btn btn-default" type="button" onClick={() => onSearch(searchText)}>
+              <button className="btn btn-default" type="submit" title="Search by city">
                 <span className="glyphicon glyphicon-search"></span>
               </button>
-              <button className="btn btn-default" type="button" onClick={() => onSearch(searchText)}>
+              <button className="btn btn-default" type="button" onClick={() => onClear()} title="Clear search">
                 <span className="glyphicon glyphicon-remove"></span>
               </button>
             </span>
@@ -24,14 +22,6 @@ const SearchBar = ({searchText, onTextChange, onSearch}) => {
         </form>
       </div>
     </div>
-
-    /*
-    <div className="input-group">
-      <input type="text" value={searchText} className="form-control" placeholder="Search by city" onChange={(event) => onTextChange(event)}></input>
-      <span className="input-group-btn">
-        <button className="btn btn-default" type="button" onClick={() => onSearch(searchText)}>Go!</button>
-      </span>
-    </div>*/
   )
 }
 

@@ -22,3 +22,9 @@ export const getCarrierDetails = (id) => {
     payload: request
   }
 }
+
+export const clearCarriers = () => {
+  return {
+    type: 'CLEAR_CARRIERS'
+  }
+}

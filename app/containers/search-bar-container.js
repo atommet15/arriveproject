@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { updateSearchText, searchCarriers } from '../actions/actions'
+import { updateSearchText, searchCarriers, clearCarriers } from '../actions/actions'
 import SearchBar from '../components/search-bar'
 
 const mapStateToProps = (state) => {
@@ -15,6 +15,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     onSearch: (searchText) => {
       dispatch(searchCarriers(searchText))
+    },
+    onClear: () => {
+      dispatch(clearCarriers())
     }
   }
 }

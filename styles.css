@@ -29,6 +29,19 @@
     to { -moz-transform: rotate(360deg);}
 }
 
+.Collapsible {
+  background-color: #eee;
+  color: #29A1D8;
+  border: 1px solid #555;
+}
+
+.Collapsible span {
+  display: block;
+  line-height: 40px;
+  width: 100%;
+  vertical-align: middle;
+  padding-left: 10px;
+}
 
 .input-group {
   margin-top: 8px;
@@ -38,11 +51,17 @@
 .input-group-btn .btn {
   padding-left: 20px;
   padding-right: 20px;
+  color: #444;
 
 }
 
+
+.form-control:focus {
+  outline: none;
+}
+
 .btn.focus, .btn:focus {
-  color: #333;
+  color: #444;
   background-color: #fff;
   border-color: #ccc;
   outline: none;
@@ -54,5 +73,5 @@
 }
 
 .navbar-brand {
-  pad ding-left: 0px;
+  padding-left: 0px;
 }
