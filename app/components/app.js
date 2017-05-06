@@ -5,7 +5,7 @@ import SearchBarContainer from '../containers/search-bar-container'
 
 const App = () => {
   return (
-    <div className="container">
+    <div className="container-fluid">
       <SearchBarContainer />
       <CarrierListContainer />
     </div>

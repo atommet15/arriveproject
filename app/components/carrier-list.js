@@ -8,8 +8,10 @@ const CarrierList = ({carriers, onCarrierClick}) => {
 
 
   return (
-    <div className="list-group">
-      {carrierArray}
+    <div className="container carrier-list">
+      <div className="list-group">
+        {carrierArray}
+      </div>
     </div>
   );
 }
