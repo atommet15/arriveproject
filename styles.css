@@ -1,3 +1,18 @@
+h2 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.ticks {
+  list-style: none;
+}
+
+.ticks li:before {
+  content: '\2713';
+  color: green;
+  padding-right: 2px;
+}
+
 
 .container-fluid{
   padding-left: 0px;
