@@ -8,6 +8,15 @@ const carriersReducer = (state = [], action) => {
       return action.payload.data;
     case 'CLEAR_CARRIERS':
       return [];
+    case 'GET_CARRIER_DETAILS':
+
+      // update the selected carrier with detailed information
+      const newState = Object.assign(state);
+      const index = newState.map( carrier => carrier.Id).indexOf(action.payload.data.Id)
+
+      newState[index] = action.payload.data;
+      return newState;
+
     default:
       return state;
   }
@@ -25,10 +34,22 @@ const searchTextReducer = (state = '', action) => {
   }
 }
 
+const activeCarrierReducer = (state = null, action) => {
+  switch(action.type){
+    case 'UPDATE_ACTIVE_CARRIER':
+      return action.payload.data ? action.payload.data : action.payload;
+    case 'CLEAR_CARRIERS':
+      return null;
+    default:
+      return state;
+  }
+}
+
 
 const RootReducer = combineReducers({
   searchText: searchTextReducer,
-  carriers: carriersReducer
+  carriers: carriersReducer,
+  activeCarrier: activeCarrierReducer
 });
 
 export default RootReducer

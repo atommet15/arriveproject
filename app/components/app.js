@@ -1,5 +1,5 @@
 import React from 'react'
-import ResultsPanel from './results-panel'
+import Results from './results'
 import SearchBarContainer from '../containers/search-bar-container'
 
 
@@ -7,7 +7,7 @@ const App = () => {
   return (
     <div className="container-fluid">
       <SearchBarContainer />
-      <ResultsPanel />
+      <Results />
     </div>
   )
 }
