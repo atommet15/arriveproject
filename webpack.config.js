@@ -10,7 +10,7 @@ module.exports = {
     loaders: [{
       test: /.js?$/,
       loader: 'babel-loader',
-      exclude: /node_modules/,
+      exclude:[ /node_modules/, /.test/],
       query: {
         presets: ['env', 'react']
       }
@@ -19,7 +19,7 @@ module.exports = {
       test: /\.(png)$/,
       loader: 'url-loader?limit=8192'
     },
-    { 
+    {
       test: /\.css$/,
       loader: "style-loader!css-loader"
     }]
