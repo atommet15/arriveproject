@@ -36,6 +36,8 @@ const searchTextReducer = (state = '', action) => {
 
 const activeCarrierReducer = (state = null, action) => {
   switch(action.type){
+    case 'GET_CARRIERS':
+      return null;
     case 'UPDATE_ACTIVE_CARRIER':
       return action.payload.data ? action.payload.data : action.payload;
     case 'CLEAR_CARRIERS':

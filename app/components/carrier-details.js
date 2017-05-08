@@ -13,9 +13,13 @@ const CarrierDetails = ({carrier}) => {
         <address>
           <h2>{carrier.Name}</h2>
           <h4><LocationList locations={carrier.Locations}/></h4>
-          <h4>{'$' + carrier.PricePerLoad + ' per load'}</h4>
 
-          <CapsList caps={carrier.Capabilities} />
+          <ul className='list-inline'>
+            <li>{'$' + carrier.PricePerLoad + ' per load'}</li>
+            <li><CapsList caps={carrier.Capabilities} /></li>
+          </ul>
+
+
 
           <strong>{carrier.ContactName}</strong> <br/>
           <a href="mailto:#">{carrier.ContactEmail}</a><br/>
