@@ -14,6 +14,6 @@ const mapStateToProps = (state) => {
 // to create ResultsContainer
 const ResultsContainer = connect(
   mapStateToProps
-)(ResultsContainer)
+)(Results)
 
 export default ResultsContainer
