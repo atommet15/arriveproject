@@ -1,9 +1,11 @@
 import React from 'react'
+import { formatWord } from '../utils/utils'
 
 const CapsList = ({caps}) => {
 
+  // format and list all the capabilities
   const items = caps.map(cap => {
-    let finalCap = cap.replace(/\b\w/g, c => c.toUpperCase());
+    let finalCap = formatWord(cap);
     return <li key={finalCap}>{finalCap}</li>
   });
 
@@ -13,6 +15,5 @@ const CapsList = ({caps}) => {
     </ul>
   );
 }
-
 
 export default CapsList;

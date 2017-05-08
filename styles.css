@@ -1,24 +1,8 @@
-h2 {
-  margin-top: 0px;
-  margin-bottom: 5px;
-}
-
-.ticks {
-  list-style: none;
-}
-
-.ticks li:before {
-  content: '\2713';
-  color: green;
-  padding-right: 2px;
-}
-
-
+/* main container panels */
 .container-fluid{
   padding-left: 0px;
   padding-right: 0px;
 }
-
 .header-bar {
   background: #444;
   color: #fafafa;
@@ -28,12 +12,18 @@ h2 {
   width: 100%;
   z-index: 100;
 }
+.navbar-brand {
+  padding-left: 0px;
+}
+.results-panel{
+  margin-top: 65px;
+}
 
+/* carrier list items */
 .list-group-item {
   border: none;
   padding-left: 0px;
 }
-
 button.list-group-item:focus {
   outline: none;
   background-color: #fff
@@ -44,6 +34,7 @@ button.list-group-item:focus {
   margin-bottom: 0px;
 }
 
+/* loading icons */
 @keyframes spin {
     from { transform: scale(1) rotate(0deg);}
     to { transform: scale(1) rotate(360deg);}
@@ -59,23 +50,15 @@ button.list-group-item:focus {
     to { -moz-transform: rotate(360deg);}
 }
 
-
-
-
-
-
 .input-group {
   margin-top: 8px;
 }
-
-
 .input-group-btn .btn {
   padding-left: 20px;
   padding-right: 20px;
   color: #444;
 
 }
-
 
 .form-control:focus {
   outline: none;
@@ -88,11 +71,16 @@ button.list-group-item:focus {
   outline: none;
 }
 
-.results-panel{
-  margin-top: 65px;
+.ticks {
+  list-style: none;
+}
+.ticks li:before {
+  content: '\2713';
+  color: green;
+  padding-right: 2px;
 }
 
-
-.navbar-brand {
-  padding-left: 0px;
+h2 {
+  margin-top: 0px;
+  margin-bottom: 5px;
 }

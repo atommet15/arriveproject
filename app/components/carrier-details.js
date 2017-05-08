@@ -1,13 +1,12 @@
 import React from 'react'
 import LocationList from './location-list'
 import CapsList from './caps-list'
+import { formatPhoneNumber, formatCurrency } from '../utils/utils'
 
 const CarrierDetails = ({carrier}) => {
 
   if(carrier){
-    let n = carrier.ContactPhone.toString().match(/^(\d{3})(\d{3})(\d{4})$/);
-    let finalNumber = `(${n[1]}) ${n[2]}-${n[3]}`;
-
+    // display all of the carries detailed information
     return (
       <div>
         <address>
@@ -15,15 +14,13 @@ const CarrierDetails = ({carrier}) => {
           <h4><LocationList locations={carrier.Locations}/></h4>
 
           <ul className='list-inline'>
-            <li>{'$' + carrier.PricePerLoad + ' per load'}</li>
+            <li>{formatCurrency(carrier.PricePerLoad) + ' per load'}</li>
             <li><CapsList caps={carrier.Capabilities} /></li>
           </ul>
 
-
-
           <strong>{carrier.ContactName}</strong> <br/>
           <a href="mailto:#">{carrier.ContactEmail}</a><br/>
-          {finalNumber}
+          {formatPhoneNumber(carrier.ContactPhone)}
         </address>
       </div>
     )
@@ -31,7 +28,6 @@ const CarrierDetails = ({carrier}) => {
   else{
     return null;
   }
-
 }
 
 export default CarrierDetails
