@@ -1,7 +1,27 @@
 import axios from 'axios';
 
+
+// add a response interceptor to axios to handle any non 2xx responses
+// axios.interceptors.response.use((response) => {
+//     // Do something with response data
+//     console.log('good response');
+//     return response;
+//   }, (error) => {
+//     // Do something with response error
+//     console.log(error.response);
+//     return Promise.reject(error);
+//   }
+// );
+
+
+
 export const searchCarriers = (searchText) => {
-  const request = axios.get('http://alinterviewapi.azurewebsites.net/api/carriers/' + searchText);
+  const request = axios.get('http://alinterviewapi.azurewebsites.net/api/carriers/' + searchText)
+    // catch 404 error specific to this call
+    .catch(error => {
+      return error.response;
+  });
+  
   return {
     type: 'GET_CARRIERS',
     payload: request
